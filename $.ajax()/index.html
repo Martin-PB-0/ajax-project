@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #text1 {
+            background-color: #C7C7C7;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="text1" id="text1" cols="30" rows="10"></textarea>
+    <button id="btn1">更换</button>
+    <script>
+        $(function() {
+            $('#btn1').on('click', function() {
+                $.get("https://xl.xilinglaoshi.com:8001/fenshou", function(res) {
+                    $("#text1").html(res.data[0].content)
+                }, 'json')
+            });
+            $("#btn1").click();
+
+        })
+    </script>
+</body>
+
+</html>

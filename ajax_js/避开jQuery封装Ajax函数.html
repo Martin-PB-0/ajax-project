@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./ajax_js.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button type="button">button</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            ajax_js({
+                type: 'get',
+                url: 'http://www.liulongbin.top:3006/api/getbooks',
+                data: {
+                    id: 1
+                },
+                success: function(res) {
+                    console.log(res);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

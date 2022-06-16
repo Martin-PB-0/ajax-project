@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/axios.min.js"></script>
+</head>
+
+<body>
+    <textarea id="fenshou" cols="30" rows="5"></textarea>
+    <button id="btnChange">更换</button>
+    <script>
+        var btnChange = document.querySelector('#btnChange');
+        var fenshou = document.querySelector('#fenshou');
+
+        function getMessage() {
+            axios({
+                method: 'GET',
+                url: 'https://xl.xilinglaoshi.com:8001/fenshou'
+            }).then(function(res) {
+                fenshou.innerHTML = res.data.data[0].content
+            })
+        }
+        btnChange.addEventListener('click', function() {
+            getMessage()
+        });
+        window.onload = function() {
+            getMessage()
+        }
+    </script>
+</body>
+
+</html>

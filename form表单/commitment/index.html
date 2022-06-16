@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/bootstrap.css" />
+    <script src="./lib/jquery.js"></script>
+    <script src="./js/commit.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            padding: 15px;
+        }
+        
+        .list-group-item :first-child {
+            background-color: #F0A94E;
+        }
+        
+        .list-group-item :last-child {
+            background-color: #52B3DA;
+        }
+        
+        .form-control {
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">发表评论</h3>
+        </div>
+        <form class="panel-body" id="formAddCmt" method="post">
+            <div>发布者：</div>
+            <input type="text" class="form-control" name="username">
+            <div>评论内容：</div>
+            <input type="text" class="form-control" name="content">
+            <button type="button" class="btn btn-primary" id="btnCmt">确认提交</button>
+        </form>
+    </div>
+
+
+    <ul class="list-group" id="cmtlist">
+        <li class="list-group-item">
+            <span class="badge">评论时间：</span> Item 1
+            <span class="badge">评论人：</span>
+        </li>
+    </ul>
+
+
+</body>
+
+</html>
